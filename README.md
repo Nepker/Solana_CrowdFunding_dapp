@@ -15,8 +15,8 @@
 #### Clone the repo
 
 ```shell
-git clone [<repo-url>](https://github.com/Nepker/Solana_CrowdFunding_dapp/.git
-cd <Solana_CrowdFunding_dapp
+git clone https://github.com/Nepker/Solana_CrowdFunding_dapp/.git
+cd <olana_CrowdFunding_dapp
 ```
 
 #### Install Dependencies
