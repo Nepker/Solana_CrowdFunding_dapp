@@ -1,0 +1,20 @@
+node_modules
+
+# Next.js
+/.next/
+/out/
+
+# Anchor
+/anchor/target/
+/anchor/.anchor/
+/anchor/test-ledger/
+user.json
+
+# Logs
+*.log
+
+# Local Environment
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
