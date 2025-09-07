@@ -15,20 +15,20 @@
 #### Clone the repo
 
 ```shell
-git clone <repo-url>
-cd <repo-name>
+git clone https://github.com/Nepker/Solana_CrowdFunding_dapp/.git
+cd <olana_CrowdFunding_dapp
 ```
 
 #### Install Dependencies
 
 ```shell
-pnpm install
+npm install
 ```
 
 #### Start the web app
 
 ```
-pnpm dev
+npm run dev
 ```
 
 ## Apps
@@ -39,7 +39,7 @@ This is a Solana program written in Rust using the Anchor framework.
 
 #### Commands
 
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `pnpm`, eg: `pnpm anchor`.
+You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `npm`, eg: `npm anchor`.
 
 #### Sync the program id:
 
@@ -48,31 +48,34 @@ Running this command will create a new keypair in the `anchor/target/deploy` dir
 You will manually need to update the constant in `anchor/lib/basic-exports.ts` to match the new program id.
 
 ```shell
-pnpm anchor keys sync
+npm anchor keys sync
 ```
 
 #### Build the program:
 
 ```shell
-pnpm anchor-build
+npm anchor-build
 ```
 
 #### Start the test validator with the program deployed:
+```shell
+solana-test-validator
+```
 
 ```shell
-pnpm anchor-localnet
+anchor build
 ```
 
 #### Run the tests
 
 ```shell
-pnpm anchor-test
+npm anchor-test
 ```
 
 #### Deploy to Devnet
 
 ```shell
-pnpm anchor deploy --provider.cluster devnet
+npm anchor deploy 
 ```
 
 ### web
@@ -81,14 +84,14 @@ This is a React app that uses the Anchor generated client to interact with the S
 
 #### Commands
 
+ Build the web app
+
+```shell
+npm run build
+```
+
 Start the web app
 
 ```shell
-pnpm dev
-```
-
-Build the web app
-
-```shell
-pnpm build
+npm run build
 ```
