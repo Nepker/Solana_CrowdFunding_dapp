@@ -5,7 +5,8 @@ import {
   SystemProgram,
   TransactionSignature,
 } from '@solana/web3.js'
-import idl from '../../anchor/target/idl/crowdfunding.json'
+import { Crowdfunding } from '@/idl/crowdfunding'
+import idl from '@/idl/crowdfunding.json'
 import { Campaign, ProgramState, Transaction } from '@/utils/interfaces'
 import { store } from '@/store'
 import { globalActions } from '@/store/globalSlices'
