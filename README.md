@@ -15,8 +15,8 @@
 #### Clone the repo
 
 ```shell
-git clone <repo-url>
-cd <repo-name>
+git clone [<repo-url>](https://github.com/Nepker/Solana_CrowdFunding_dapp/.git
+cd <Solana_CrowdFunding_dapp
 ```
 
 #### Install Dependencies
@@ -28,7 +28,7 @@ npm install
 #### Start the web app
 
 ```
-npm dev
+npm run dev
 ```
 
 ## Apps
