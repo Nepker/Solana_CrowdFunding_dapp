@@ -1,6 +1,6 @@
 import * as anchor from '@coral-xyz/anchor'
-import { Crowdfunding } from '../target/types/crowdfunding'
-import idl from '../target/idl/crowdfunding.json'
+import { Crowdfunding } from '../../src/idl/crowdfunding'
+import idl from '../../src/idl/crowdfunding.json'
 import fs from 'fs'
 const { SystemProgram, PublicKey } = anchor.web3
 
