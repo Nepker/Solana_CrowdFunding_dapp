@@ -21,7 +21,7 @@ export const getProvider = (
   publicKey: PublicKey | null,
   signTransaction: any,
   sendTransaction: any
-): Program<crowdfunding> | null => {
+): Program<Crowdfunding> | null => {
   if (!publicKey || !signTransaction) {
     console.error('Wallet not connected or missing signTransaction')
     return null
@@ -34,10 +34,10 @@ export const getProvider = (
     { commitment: 'processed' }
   )
 
-  return new Program<crowdfunding>(idl as any, provider)
+  return new Program<Crowdfunding>(idl as any, provider)
 }
 
-export const getProviderReadonly = (): Program<crowdfunding> => {
+export const getProviderReadonly = (): Program<Crowdfunding> => {
   const connection = new Connection(RPC_URL, 'confirmed')
 
   const walllet = {
@@ -56,11 +56,11 @@ export const getProviderReadonly = (): Program<crowdfunding> => {
     { commitment: 'processed' }
   )
 
-  return new Program<crowdfunding>(idl as any, provider)
+  return new Program<Crowdfunding>(idl as any, provider)
 }
 
 export const createCampaign = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   publicKey: PublicKey,
   title: string,
   description: string,
@@ -101,7 +101,7 @@ export const createCampaign = async (
 }
 
 export const updateCampaign = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   publicKey: PublicKey,
   pda: string,
   title: string,
@@ -131,7 +131,7 @@ export const updateCampaign = async (
 }
 
 export const deleteCampaign = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   publicKey: PublicKey,
   pda: string
 ): Promise<TransactionSignature> => {
@@ -156,7 +156,7 @@ export const deleteCampaign = async (
 }
 
 export const updatePlatform = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   publicKey: PublicKey,
   percent: number
 ): Promise<TransactionSignature> => {
@@ -183,7 +183,7 @@ export const updatePlatform = async (
 }
 
 export const donateToCampaign = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   publicKey: PublicKey,
   pda: string,
   amount: number
@@ -221,7 +221,7 @@ export const donateToCampaign = async (
 }
 
 export const withdrawFromCampaign = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   publicKey: PublicKey,
   pda: string,
   amount: number
@@ -268,7 +268,7 @@ export const withdrawFromCampaign = async (
 }
 
 export const fetchActiveCampaigns = async (
-  program: Program<crowdfunding>
+  program: Program<Crowdfunding>
 ): Promise<Campaign[]> => {
   const campaigns = await program.account.campaign.all()
   const activeCampaigns = campaigns.filter((c) => c.account.active)
@@ -276,7 +276,7 @@ export const fetchActiveCampaigns = async (
 }
 
 export const fetchUserCampaigns = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   publicKey: PublicKey
 ): Promise<Campaign[]> => {
   const campaigns = await program.account.campaign.all()
@@ -287,7 +287,7 @@ export const fetchUserCampaigns = async (
 }
 
 export const fetchCampaignDetails = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   pda: string
 ): Promise<Campaign> => {
   const campaign = await program.account.campaign.fetch(pda)
@@ -310,7 +310,7 @@ export const fetchCampaignDetails = async (
 }
 
 export const fetchAllDonations = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   pda: string
 ): Promise<Transaction[]> => {
   const campaign = await program.account.campaign.fetch(pda)
@@ -325,7 +325,7 @@ export const fetchAllDonations = async (
 }
 
 export const fetchAllWithsrawals = async (
-  program: Program<crowdfunding>,
+  program: Program<Crowdfunding>,
   pda: string
 ): Promise<Transaction[]> => {
   const campaign = await program.account.campaign.fetch(pda)
@@ -340,7 +340,7 @@ export const fetchAllWithsrawals = async (
 }
 
 export const fetchProgramState = async (
-  program: Program<crowdfunding>
+  program: Program<Crowdfunding>
 ): Promise<ProgramState> => {
   const [programStatePda] = PublicKey.findProgramAddressSync(
     [Buffer.from('program_state')],
