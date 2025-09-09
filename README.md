@@ -1,97 +1,75 @@
-# crowdfunding
+# Solana Crowd Funding dApp
+
+A decentralized crowdfunding platform built on Solana.
+
+## Problem Statement
+
+Traditional crowdfunding platforms are centralized, often charge high fees, and can be subject to censorship. Donors have little transparency into how funds are managed and used.
+
+## Our Solution
+
+This project is a decentralized application (dApp) on the Solana blockchain that allows anyone to create and contribute to fundraising campaigns. By leveraging the speed and low transaction costs of Solana, we provide a transparent, secure, and censorship-resistant alternative to traditional crowdfunding.
+
+## Features
+
+*   **Create Campaigns:** Anyone can create a fundraising campaign with a goal and a description.
+*   **Donate to Campaigns:** Users can easily donate SOL to their favorite campaigns.
+*   **Withdraw Funds:** Campaign creators can withdraw the donated funds.
+*   **Transparency:** All transactions are recorded on the Solana blockchain, providing full transparency to donors.
+*   **Low Fees:** Solana's low transaction fees make it affordable to create and donate to campaigns.
+
+## Live Demo
+
+https://68c073f812f3525f973bb155--solana-crowdfuncding-dapp.netlify.app/
+
+## Demo Video
+
+https://youtu.be/PaaxX-Ke6Q4
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node v18.18.0 or higher
-
+- Node.js v18.18.0 or higher
 - Rust v1.77.2 or higher
 - Anchor CLI 0.30.1 or higher
 - Solana CLI 1.18.17 or higher
 
 ### Installation
 
-#### Clone the repo
+1.  **Clone the repo:**
+    ```shell
+    git clone https://github.com/Nepker/Solana_CrowdFunding_dapp.git
+    cd Solana_CrowdFunding_dapp
+    ```
 
-```shell
-git clone https://github.com/Nepker/Solana_CrowdFunding_dapp/.git
-cd <olana_CrowdFunding_dapp
+2.  **Install Dependencies:**
+    ```shell
+    npm install
+    ```
+
+3.  **Start the web app:**
+    ```shell
+    npm run dev
+    ```
+
+## For Developers
+
+### Anchor Program
+
+The Solana program is located in the `/anchor` directory.
+
+- **Build the program:**
+  ```shell
+  npm run anchor-build
 ```
 
-#### Install Dependencies
-
-```shell
-npm install
+### Run tests:
+```
+npm run anchor-test
 ```
 
-#### Start the web app
-
+### Deploy to Devnet:
 ```
-npm run dev
-```
-
-## Apps
-
-### anchor
-
-This is a Solana program written in Rust using the Anchor framework.
-
-#### Commands
-
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `npm`, eg: `npm anchor`.
-
-#### Sync the program id:
-
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
-
-You will manually need to update the constant in `anchor/lib/basic-exports.ts` to match the new program id.
-
-```shell
-npm anchor keys sync
-```
-
-#### Build the program:
-
-```shell
-npm anchor-build
-```
-
-#### Start the test validator with the program deployed:
-```shell
-solana-test-validator
-```
-
-```shell
-anchor build
-```
-
-#### Run the tests
-
-```shell
-npm anchor-test
-```
-
-#### Deploy to Devnet
-
-```shell
-npm anchor deploy 
-```
-
-### web
-
-This is a React app that uses the Anchor generated client to interact with the Solana program.
-
-#### Commands
-
- Build the web app
-
-```shell
-npm run build
-```
-
-Start the web app
-
-```shell
-npm run build
+npm run anchor deploy
 ```
