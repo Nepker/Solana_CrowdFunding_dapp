@@ -23,8 +23,7 @@ This project is a decentralized application (dApp) on the Solana blockchain that
 https://68c073f812f3525f973bb155--solana-crowdfuncding-dapp.netlify.app/
 
 ## Demo Video
-
-https://youtu.be/PaaxX-Ke6Q4
+**https://www.loom.com/share/4f325d20969b4566944b37447ee7b2e8?sid=1efeb9a5-2741-4927-a984-1029dffb9f53**
 
 ## Getting Started
 
