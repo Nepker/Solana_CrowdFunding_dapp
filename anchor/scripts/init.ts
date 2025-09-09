@@ -1,9 +1,9 @@
 import 'dotenv/config'
 import * as anchor from '@coral-xyz/anchor'
-import { Crowdfunding } from '../../src/idl/crowdfunding'
+import { Crowdfunding } from '../../src/idl/crowdfunding.js'
 import idl from '../../src/idl/crowdfunding.json'
 import fs from 'fs'
-import { getClusterURL } from '@/utils/helper'
+import { getClusterURL } from '../../src/utils/helper'
 const { SystemProgram, PublicKey } = anchor.web3
 
 const main = async (cluster: string) => {
@@ -54,6 +54,6 @@ const main = async (cluster: string) => {
   }
 }
 
-const cluster: string = process.env.NEXT_PUBLIC_CLUSTER || 'localhost'
+const cluster: string = process.env.NEXT_PUBLIC_CLUSTER || 'devnet'
 main(cluster).catch((error) => console.log(error))
 
